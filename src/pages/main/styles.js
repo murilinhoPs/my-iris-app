@@ -5,6 +5,18 @@ const Container = style.ScrollView`
     paddingHorizontal: 20px;
     flex:1;
 `;
+
+const CatImage = style.Image`
+    alignSelf: center;
+`;
+
+const ContentContainer = style.View`
+    justifyContent: center;
+    flexDirection: row-reverse;
+    alignItems: center;
+    width: 100%;
+`;
+
 const Title = style.Text`
     fontSize: 30px;
     fontWeight: 700;
@@ -20,4 +32,4 @@ const Body = style.Text`
     paddingTop: 20px;
 `;
 
-export { Title, Body, Container };
+export { Title, Body, Container, ContentContainer, CatImage };
