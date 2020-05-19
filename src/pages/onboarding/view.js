@@ -1,0 +1,52 @@
+import React from "react";
+import AppIntroSlider from "react-native-app-intro-slider";
+import { View } from "react-native";
+import { Feather } from "@expo/vector-icons";
+
+import {
+  IconContainer,
+  ContentContainer,
+  ContentImage,
+  Title,
+  Description,
+} from "./styles";
+
+const OnboardingView = ({ slides, onDone }) => {
+  const renderSlide = ({ item }) => {
+    return (
+      <ContentContainer>
+        <Title>{item.title}</Title>
+        <ContentImage source={item.image} />
+        <Description>{item.text}</Description>
+      </ContentContainer>
+    );
+  };
+
+  const renderNextButton = () => (
+    <IconContainer>
+      <Feather name="arrow-right-circle" size={30} color="rgba(0, 0, 0, .6)" />
+    </IconContainer>
+  );
+
+  const renderDoneButton = () => (
+    <IconContainer>
+      <Feather name="check-circle" size={30} color="rgba(10, 100, 60, .7)" />
+    </IconContainer>
+  );
+
+  return (
+    <View style={{ backgroundColor: "#f7f4fc", flex: 1 }}>
+      <AppIntroSlider
+        renderItem={renderSlide}
+        data={slides}
+        onDone={onDone}
+        dotStyle={{ backgroundColor: "rgba(0, 0, 0, .5)" }}
+        activeDotStyle={{ backgroundColor: "rgb(209, 153, 255, 0.8)" }}
+        renderNextButton={renderNextButton}
+        renderDoneButton={renderDoneButton}
+      />
+    </View>
+  );
+};
+
+export default OnboardingView;

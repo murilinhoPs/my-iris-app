@@ -7,16 +7,16 @@ import { getUser } from "./utils/utils";
 const LoadingScreen = () => {
   const navigation = useNavigation();
 
+  async function goToNextScreen() {
+    console.log("verifyToken");
+
+    const verifyToken = await getUser();
+    console.log(verifyToken);
+
+    navigation.navigate(verifyToken ? "dashboard" : "main");
+  }
+
   React.useEffect(() => {
-    async function goToNextScreen() {
-      console.log("verifyToken");
-
-      const verifyToken = await getUser();
-      console.log(verifyToken);
-
-      navigation.navigate(verifyToken ? "dashboard" : "main");
-    }
-
     goToNextScreen();
   });
 

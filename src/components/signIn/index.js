@@ -45,7 +45,7 @@ const SignIn = () => {
 
       navigation.reset({
         index: 0,
-        routes: [{ name: "dashboard" }],
+        routes: [{ name: "onboarding" }],
       });
     } catch (e) {
       console.log(e);

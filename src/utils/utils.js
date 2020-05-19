@@ -1,7 +1,12 @@
 import { AsyncStorage } from "react-native";
 
 export async function getUser() {
-  return await AsyncStorage.getItem("@IrisLabApp:accessToken");
+  try {
+    console.log("gettingUser...");
+    return await AsyncStorage.getItem("@IrisLabApp:accessToken");
+  } catch (e) {
+    throw e;
+  }
 }
 
 export async function storeUser(accessToken) {
