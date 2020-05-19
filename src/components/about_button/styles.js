@@ -11,6 +11,7 @@ const MyFloatingButton = style(FAB)`
     margin: 16px;
     right: -7px;
     bottom: -5px;
+    backgroundColor: #A233FF;
 `;
 
 export { Container, MyFloatingButton };

@@ -33,14 +33,17 @@ const ListStyle = style.View`
 `;
 
 const ListItemStyle = style.View`        
-    flexDirection: row;
+    flexDirection: row-reverse;
     alignItems: center;
     justifyContent: space-around;
 `;
 
 const ListTextStyle = style.Text`
     color: #555555;
-    fontSize: 13px;
+    fontSize: 15px;
+    textDecorationLine: ${(props) => props.lineDecoration}; 
+    fontWeight: bold;
+    letterSpacing: 2px;
 `;
 
 const CheckboxContainer = style.View` 
