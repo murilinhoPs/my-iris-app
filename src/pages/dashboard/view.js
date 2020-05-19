@@ -1,25 +1,99 @@
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { Text, FlatList, ScrollView } from "react-native";
+import { ProgressBar, Checkbox } from "react-native-paper";
 
-// import { Container } from './styles';
+import {
+  Container,
+  MyDivider,
+  ProgressbarContainer,
+  TasksContainer,
+  CheckboxContainer,
+  ListStyle,
+  ListItemStyle,
+  ListTextStyle,
+  TasksNameText,
+} from "./styles";
+
+import GameView from "./components/games_view";
 
 const DashboardView = ({ data }) => {
-  const renderListData = ({ item }) => <Text>{item.task}</Text>;
+  let completedTasks = data[0].tasks.filter(
+    (value) => value.completed === true
+  );
 
-  console.log(data[0].name);
-  console.log(data[0].email);
+  const completedNumber = completedTasks.length / data[0].tasks.length;
 
-  console.log(data[0].tasks);
+  const renderListData = ({ item }) => (
+    <ListItemStyle>
+      <ListTextStyle>{item.task}</ListTextStyle>
+      <CheckboxContainer>
+        <Checkbox
+          disabled={false}
+          uncheckedColor="#c9c9cf"
+          color="#ceb6e2"
+          status={item.completed ? "checked" : "unchecked"}
+        />
+      </CheckboxContainer>
+    </ListItemStyle>
+  );
 
   return (
-    <View>
-      <Text>{data[0].name}</Text>
-      <FlatList
-        data={data[0].tasks}
-        keyExtractor={(item) => String(item.id)}
-        renderItem={renderListData}
-      />
-    </View>
+    <Container>
+      <TasksContainer>
+        <TasksNameText>{data[0].name}</TasksNameText>
+
+        <ProgressbarContainer>
+          <Text>Tarefas completas: {completedNumber.toFixed(1) * 100}%</Text>
+          <ProgressBar
+            progress={completedTasks.length / data[0].tasks.length}
+            style={{ borderRadius: 15 }}
+          />
+        </ProgressbarContainer>
+      </TasksContainer>
+
+      <ListStyle>
+        <FlatList
+          data={data[0].tasks}
+          keyExtractor={(item) => String(item.id)}
+          renderItem={renderListData}
+          showsVerticalScrollIndicator={false}
+        />
+      </ListStyle>
+
+      <MyDivider />
+
+      <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={true}
+        centerContent={true}
+      >
+        <GameView
+          image={require("../../assets/pokemons_is_everywhere800.jpg")}
+          name="Pesca Pokémon"
+          points="1200 Pontos"
+        />
+        <GameView
+          image={require("../../assets/pokeWatch.png")}
+          name="Hora Pokémon"
+          points="100 Pontos"
+        />
+        <GameView
+          image={require("../../assets/superCat.jpg")}
+          name="Super Cat"
+          points="1000 Pontos"
+        />
+        <GameView
+          image={require("../../assets/Coco2.jpg")}
+          name="Catch Poopy  "
+          points="780 Pontos"
+        />
+        <GameView
+          image={require("../../assets/kittyOnboarding.png")}
+          name="Organize Games"
+          points="500 Pontos"
+        />
+      </ScrollView>
+    </Container>
   );
 };
 

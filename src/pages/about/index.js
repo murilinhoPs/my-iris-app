@@ -5,8 +5,8 @@ import AboutView from "./view";
 
 const About = () => {
   return (
-    <View>
-      <AppBar />
+    <View style={{ backgroundColor: "#f7f4fc", flex: 1 }}>
+      <AppBar showSignOut={false} />
       <AboutView />
     </View>
   );

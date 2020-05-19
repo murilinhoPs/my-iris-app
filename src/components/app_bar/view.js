@@ -17,7 +17,8 @@ const AppBarView = ({ goBack, hidden, signOut, showSignOut }) => {
       {showSignOut ?? (
         <TouchableOpacity onPress={signOut}>
           <MaterialCommunityIcons
-            name="exit-to-app"
+            style={{ scaleX: -1 }}
+            name="logout"
             size={35}
             color="#A233FF"
           />

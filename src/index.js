@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ActivityIndicator, AsyncStorage } from "react-native";
+import { View, ActivityIndicator } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { getUser } from "./utils/utils";
@@ -10,6 +10,7 @@ const LoadingScreen = () => {
   React.useEffect(() => {
     async function goToNextScreen() {
       const verifyToken = await getUser();
+      console.log(verifyToken);
 
       navigation.navigate(verifyToken ? "dashboard" : "main");
     }

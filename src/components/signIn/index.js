@@ -12,6 +12,7 @@ const SignIn = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleNameChange = (name) => {
     setName(name);
@@ -35,8 +36,9 @@ const SignIn = () => {
         password: password,
       };
 
-      const response = await api.post("users/login", credentials);
+      setLoading(true);
 
+      const response = await api.post("users/login", credentials);
       console.log(response.data);
 
       await storeUser(response.data.accessToken);
@@ -47,6 +49,9 @@ const SignIn = () => {
       });
     } catch (e) {
       console.log(e);
+
+      setLoading(false);
+
       setError("Houve um problema com o login, verifique suas credenciais!");
     }
   }
@@ -59,6 +64,7 @@ const SignIn = () => {
       handleNameChange={handleNameChange}
       handlePasswordChange={handlePasswordChange}
       handleSignInPress={handleSignInPress}
+      loading={loading}
     />
   );
 };
