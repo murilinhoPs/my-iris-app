@@ -9,6 +9,8 @@ const LoadingScreen = () => {
 
   React.useEffect(() => {
     async function goToNextScreen() {
+      console.log("verifyToken");
+
       const verifyToken = await getUser();
       console.log(verifyToken);
 
