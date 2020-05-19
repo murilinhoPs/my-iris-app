@@ -1,10 +1,15 @@
 import React from "react";
 import { View } from "react-native";
-
-// import { Container } from './styles';
+import AppBar from "../../components/app_bar";
+import AboutView from "./view";
 
 const About = () => {
-  return <View />;
+  return (
+    <View>
+      <AppBar />
+      <AboutView />
+    </View>
+  );
 };
 
 export default About;

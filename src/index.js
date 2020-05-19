@@ -1,0 +1,27 @@
+import React from "react";
+import { View, ActivityIndicator, AsyncStorage } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
+import { getUser } from "./utils/utils";
+
+const LoadingScreen = () => {
+  const navigation = useNavigation();
+
+  React.useEffect(() => {
+    async function goToNextScreen() {
+      const verifyToken = await getUser();
+
+      navigation.navigate(verifyToken ? "dashboard" : "main");
+    }
+
+    goToNextScreen();
+  });
+
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <ActivityIndicator size="large" color="#A233FF" />
+    </View>
+  );
+};
+
+export default LoadingScreen;
