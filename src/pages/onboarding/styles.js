@@ -25,15 +25,14 @@ const Title = style(FontText)`
     letterSpacing: 2px;
     textAlign: center;
     color: rgba(0,0,0, 0.85)
-
 `;
 
 const Description = style(FontText)`
     lineHeight: 23px;
-    fontSize: 16px;
+    fontSize: 15px;
     textAlign: center;
-    color: rgba(0,0,0, 0.7)
-
+    color: rgba(0,0,0, 0.7);
+    fontWeight: 600;
 `;
 
 export { IconContainer, ContentContainer, ContentImage, Title, Description };
