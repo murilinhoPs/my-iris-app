@@ -1,4 +1,5 @@
 import style from "styled-components/native";
+import FontText from "../../custom_fonts";
 
 const Container = style.View`
   alignItems: center;
@@ -18,7 +19,7 @@ const Input = style.TextInput`
   fontSize: 16px;
 `;
 
-const ErrorMessage = style.Text`
+const ErrorMessage = style(FontText)`
   textAlign: center;
   color: #ce2029;
   fontSize: 16px;
@@ -35,10 +36,10 @@ const Button = style.TouchableOpacity`
   marginHorizontal: 20px;
 `;
 
-const ButtonText = style.Text`
+const ButtonText = style(FontText)`
   color: #fff;
-  fontWeight: bold;
-  fontSize: 16px;
+  fontWeight: 600;
+  fontSize: 18px;
   textAlign: center;
 `;
 

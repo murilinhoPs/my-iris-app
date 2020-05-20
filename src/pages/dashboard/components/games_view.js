@@ -22,7 +22,7 @@ const GameView = ({ image, points, name }) => {
           <GameImage source={image} />
 
           <GameTextContainer>
-            <GameText cor="#000">{name} </GameText>
+            <GameText cor="rgba(0,0,0,0.7)">{name} </GameText>
             <GameText cor="#000"> </GameText>
             <GameText cor="#f87f"> {points}</GameText>
           </GameTextContainer>
@@ -35,7 +35,7 @@ const GameView = ({ image, points, name }) => {
         </GamePadding>
 
         <GameButton>
-          <GameButtonText>JOGAR!</GameButtonText>
+          <GameButtonText isTitle={true}>JOGAR!</GameButtonText>
         </GameButton>
       </GameComponent>
     </GamesContainer>

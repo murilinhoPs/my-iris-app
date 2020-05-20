@@ -3,6 +3,8 @@ import { View, ActivityIndicator } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { getUser } from "./utils/utils";
+import FontText from "./custom_fonts";
+
 const LoadingScreen = () => {
   const navigation = useNavigation();
 

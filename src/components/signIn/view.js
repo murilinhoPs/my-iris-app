@@ -34,7 +34,7 @@ const SignInView = ({
         <ActivityIndicator size="large" color="#A233FF" />
       ) : (
         <Button onPress={handleSignInPress}>
-          <ButtonText>Entrar</ButtonText>
+          <ButtonText isTitle={true}>Entrar</ButtonText>
         </Button>
       )}
     </Container>

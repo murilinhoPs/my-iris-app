@@ -15,7 +15,7 @@ const OnboardingView = ({ slides, onDone }) => {
   const renderSlide = ({ item }) => {
     return (
       <ContentContainer>
-        <Title>{item.title}</Title>
+        <Title isTitle={true}>{item.title}</Title>
         <ContentImage source={item.image} />
         <Description>{item.text}</Description>
       </ContentContainer>

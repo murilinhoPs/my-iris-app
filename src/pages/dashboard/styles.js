@@ -1,5 +1,6 @@
 import style from "styled-components/native";
 import { Divider } from "react-native-paper";
+import FontText from "../../custom_fonts";
 
 const Container = style.View`
     paddingHorizontal: 20px;
@@ -23,9 +24,15 @@ const TasksContainer = style.View`
     justifyContent: space-between;
 `;
 
-const TasksNameText = style.Text`
+const TasksNameText = style(FontText)`
     fontSize: 22px;
     fontWeight: 800;
+    color: rgba(0,0,0,0.8) 
+`;
+
+const TasksPercentageText = style(FontText)`
+    fontSize: 11px;
+    paddingBottom: 5px;
 `;
 
 const ListStyle = style.View` 
@@ -39,11 +46,10 @@ const ListItemStyle = style.View`
     paddingHorizontal: 30px;
 `;
 
-const ListTextStyle = style.Text`
+const ListTextStyle = style(FontText)`
     color: #555555;
     fontSize: 15px;
     textDecorationLine: ${(props) => props.lineDecoration}; 
-    fontWeight: bold;
     letterSpacing: 2px;
 `;
 
@@ -60,11 +66,11 @@ const GamesContainer = style.View`
     marginTop: 20px;
     marginBottom: 8%;
     alignSelf: center;
-    marginRight: 30px;
+    marginRight: 20px;
 `;
 
 const GamePadding = style.View`
-    padding: 20px;
+    padding: 15px;
 `;
 
 const GameComponent = style.View`
@@ -88,10 +94,9 @@ const GameTextContainer = style.View`
     paddingHorizontal: 10px;
 `;
 
-const GameText = style.Text`
+const GameText = style(FontText)`
     color: ${(props) => props.cor};
-    fontSize: 14px;
-    fontWeight: 600;
+    fontSize: 13px;
     marginBottom: 10px;
 `;
 
@@ -110,11 +115,11 @@ const GameButton = style.TouchableOpacity`
     elevation: 1;
 `;
 
-const GameButtonText = style.Text`
-    fontWeight: bold;
+const GameButtonText = style(FontText)`
+    fontWeight: 800;
     alignSelf: center;
     color: #fff;
-    fontSize: 18px;
+    fontSize: 20px;
 `;
 
 export {
@@ -136,4 +141,5 @@ export {
   GamePadding,
   TasksNameText,
   ListTextStyle,
+  TasksPercentageText,
 };

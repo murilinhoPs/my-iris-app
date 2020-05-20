@@ -1,4 +1,5 @@
 import style from "styled-components/native";
+import FontText from "../../custom_fonts";
 
 const Container = style.ScrollView`
     textAlign: center;
@@ -11,24 +12,24 @@ const CatImage = style.Image`
 `;
 
 const ContentContainer = style.View`
+    marginBottom: 10px;
     justifyContent: center;
     flexDirection: row-reverse;
     alignItems: center;
-    width: 100%;
 `;
 
-const Title = style.Text`
-    fontSize: 30px;
-    fontWeight: 700;
+const Title = style(FontText)`
+    fontSize: 28px;
+    fontWeight: 600;
     color: #131300;
     opacity: 0.8;
     marginTop: 15px;
 `;
 
-const Body = style.Text`
-    fontSize: 18px;
+const Body = style(FontText)`
+    fontSize: 16px;
     color: #737380;
-    lineHeight: 26px;
+    lineHeight: 24px;
     paddingTop: 20px;
 `;
 

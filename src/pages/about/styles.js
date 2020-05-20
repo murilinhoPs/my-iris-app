@@ -1,4 +1,5 @@
 import style from "styled-components/native";
+import FontText from "../../custom_fonts";
 
 const Container = style.View`
     alignItems: center;
@@ -17,18 +18,18 @@ const TitleContainer = style.View`
     paddingTop: 10px;
 `;
 
-const TitleText = style.Text`
+const TitleText = style(FontText)`
     fontSize: 30px;
-    fontWeight: 700;
+    fontWeight: 600;
     color: #131300;
     opacity: 0.8;
     marginTop: 10px;
 `;
 
-const Description = style.Text`
-    fontSize: 16px;
+const Description = style(FontText)`
+    fontSize: 14px;
     color: #737380;
-    lineHeight: 18px;
+    lineHeight: 16px;
     paddingTop: 5px;
 `;
 

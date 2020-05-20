@@ -16,7 +16,7 @@ const AboutView = () => {
       <Container>
         <ContentContainer>
           <TitleContainer>
-            <TitleText>Sobre: </TitleText>
+            <TitleText isTitle={true}>Sobre: </TitleText>
             <MaterialCommunityIcons
               name="information-outline"
               size={35}
@@ -24,7 +24,7 @@ const AboutView = () => {
               style={{ paddingTop: 13, opacity: 0.8 }}
             />
           </TitleContainer>
-          <Description>
+          <Description isTitle={false}>
             A Íris lab é uma startup fundada a 6 meses que está hospedada no
             Google Campus, e como startup queremos levar a tecnologia para
             crianças.
@@ -33,7 +33,7 @@ const AboutView = () => {
 
         <ContentContainer>
           <TitleContainer>
-            <TitleText>Objetivos: </TitleText>
+            <TitleText isTitle={true}>Objetivos: </TitleText>
             <Feather
               name="crosshair"
               size={35}
@@ -51,7 +51,7 @@ const AboutView = () => {
 
         <ContentContainer>
           <TitleContainer>
-            <TitleText>Contato: </TitleText>
+            <TitleText isTitle={true}>Contato: </TitleText>
             <MaterialCommunityIcons
               name="contact-mail-outline"
               size={35}

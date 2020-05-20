@@ -12,6 +12,7 @@ import {
   ListItemStyle,
   ListTextStyle,
   TasksNameText,
+  TasksPercentageText,
 } from "./styles";
 
 import GameView from "./components/games_view";
@@ -42,10 +43,12 @@ const DashboardView = ({ data }) => {
   return (
     <Container>
       <TasksContainer>
-        <TasksNameText>{data[0].name}</TasksNameText>
+        <TasksNameText isTitle={true}>{data[0].name}</TasksNameText>
 
         <ProgressbarContainer>
-          <Text>Tarefas completas: {completedNumber.toFixed(1) * 100}%</Text>
+          <TasksPercentageText>
+            Tarefas completas: {completedNumber.toFixed(1) * 100}%
+          </TasksPercentageText>
           <ProgressBar
             progress={completedTasks.length / data[0].tasks.length}
             style={{ borderRadius: 15 }}
