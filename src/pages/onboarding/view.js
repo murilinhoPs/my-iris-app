@@ -1,7 +1,7 @@
 import React from "react";
 import AppIntroSlider from "react-native-app-intro-slider";
 import { View } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 
 import {
   IconContainer,
@@ -28,6 +28,16 @@ const OnboardingView = ({ slides, onDone }) => {
     </IconContainer>
   );
 
+  const renderSkipButton = () => (
+    <IconContainer>
+      <MaterialCommunityIcons
+        name="close-circle-outline"
+        size={30}
+        color="rgba(200, 40, 50, 1.0)"
+      />
+    </IconContainer>
+  );
+
   const renderDoneButton = () => (
     <IconContainer>
       <Feather name="check-circle" size={30} color="rgba(10, 100, 60, .7)" />
@@ -40,10 +50,13 @@ const OnboardingView = ({ slides, onDone }) => {
         renderItem={renderSlide}
         data={slides}
         onDone={onDone}
+        onSkip={onDone}
         dotStyle={{ backgroundColor: "rgba(0, 0, 0, .5)" }}
-        activeDotStyle={{ backgroundColor: "rgb(209, 153, 255, 0.8)" }}
+        activeDotStyle={{ backgroundColor: "#A233FF" }}
         renderNextButton={renderNextButton}
         renderDoneButton={renderDoneButton}
+        renderSkipButton={renderSkipButton}
+        showSkipButton={true}
       />
     </View>
   );

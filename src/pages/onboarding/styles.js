@@ -19,15 +19,19 @@ const ContentImage = style.Image`
 `;
 
 const Title = style.Text`
-    fontSize: 24px;
+    fontSize: 28px;
     fontWeight: bold;
     letterSpacing: 2px;
+    textAlign: center;
+    color: rgba(0,0,0, 0.85)
+
 `;
 
 const Description = style.Text`
     lineHeight: 23px;
     fontSize: 16px;
     textAlign: center;
+    color: rgba(0,0,0, 0.7)
 
 `;
 

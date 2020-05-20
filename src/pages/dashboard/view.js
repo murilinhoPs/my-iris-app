@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, FlatList, ScrollView, View } from "react-native";
+import { Text, FlatList, ScrollView } from "react-native";
 import { ProgressBar, Checkbox } from "react-native-paper";
 
 import {

@@ -8,7 +8,7 @@ const slides = [
     key: 1,
     title: "O que é?",
     text:
-      "Um lugar para seu filho aprender sobre tecnologia e você acompanhar ele!",
+      "Um lugar para seu filho aprender sobre tecnologia com seu acompanhamento.",
     image: require("../../assets/aprendaCom.jpg"),
     backgroundColor: "#f7f4fc",
   },
@@ -22,7 +22,7 @@ const slides = [
   {
     key: 3,
     title: "Obrigado! Está tudo pronto",
-    text: "Aproveite o app e se divirta com seu filho!",
+    text: "Aproveite o app e se divirta!",
     image: require("../../assets/obrigado.jpg"),
     backgroundColor: "#f7f4fc",
   },
