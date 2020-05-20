@@ -33,10 +33,10 @@ const ListStyle = style.View`
 `;
 
 const ListItemStyle = style.View`        
-    flexDirection: row-reverse;
+    flexDirection: row;
     alignItems: center;
     justifyContent: space-between;
-    paddingHorizontal: 20%;
+    paddingHorizontal: 30px;
 `;
 
 const ListTextStyle = style.Text`
